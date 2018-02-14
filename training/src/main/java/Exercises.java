@@ -34,7 +34,7 @@ public class Exercises {
         IntStream intStream = Stream.of(intArr1, intArr2)
                 .flatMapToInt(Arrays::stream);
 
-        List<Integer> intList = intStream.boxed().collect(Collectors.toList());
+        List<Integer> intList = intStream.boxed().collect(Collectors.toList());//因为int是基本数据类型 所以包装出来的stream需要box装箱才能被collect
         intList.forEach(i->{
             System.out.println("intList:"+i);
         });
