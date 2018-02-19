@@ -2,7 +2,7 @@
 SELECT Sname,SSEX,CLASS from sqlpractices1.student;
 
 -- 2、 查询教师所有的单位即不重复的Depart列。
-
+select * from teacher;
 
 -- 3、 查询Student表的所有记录。
 -- 4、 查询Score表中成绩在60到80之间的所有记录。
