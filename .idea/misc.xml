@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/training/pom.xml" />
         <option value="$PROJECT_DIR$/sqltraining/pom.xml" />
+        <option value="$PROJECT_DIR$/javaEnhance/pom.xml" />
       </list>
     </option>
   </component>

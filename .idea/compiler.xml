@@ -22,11 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="javaEnhance" />
         <module name="sqltraining" />
         <module name="training" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="javaEnhance" target="1.5" />
       <module name="sqltraining" target="1.5" />
       <module name="training" target="1.8" />
     </bytecodeTargetLevel>

@@ -26,114 +26,124 @@
       <table id="15" parent="1" name="score"/>
       <table id="16" parent="1" name="student"/>
       <table id="17" parent="1" name="teacher"/>
-      <column id="18" parent="14" name="CNO">
+      <table id="18" parent="1" name="grade"/>
+      <column id="19" parent="14" name="CNO">
         <mandatory>1</mandatory>
         <data-type>varchar(5)|0</data-type>
       </column>
-      <column id="19" parent="14" name="CNAME">
+      <column id="20" parent="14" name="CNAME">
         <mandatory>1</mandatory>
         <data-type>varchar(10)|0</data-type>
       </column>
-      <column id="20" parent="14" name="TNO">
+      <column id="21" parent="14" name="TNO">
         <mandatory>1</mandatory>
         <data-type>varchar(3)|0</data-type>
       </column>
-      <index id="21" parent="14" name="FK_COURSE_TEACHER">
+      <index id="22" parent="14" name="FK_COURSE_TEACHER">
         <columns>TNO</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="22" parent="14" name="PRIMARY">
+      <key id="23" parent="14" name="PRIMARY">
         <columns>CNO</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="23" parent="14" name="FK_COURSE_TEACHER">
+      <foreign-key id="24" parent="14" name="FK_COURSE_TEACHER">
         <columns>TNO</columns>
         <ref-key>~.teacher.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="24" parent="15" name="SNO">
+      <column id="25" parent="15" name="SNO">
         <mandatory>1</mandatory>
         <data-type>varchar(3)|0</data-type>
       </column>
-      <column id="25" parent="15" name="CNO">
+      <column id="26" parent="15" name="CNO">
         <mandatory>1</mandatory>
         <data-type>varchar(5)|0</data-type>
       </column>
-      <column id="26" parent="15" name="DEGREE">
+      <column id="27" parent="15" name="DEGREE">
         <mandatory>1</mandatory>
         <data-type>decimal(10,1)|0</data-type>
       </column>
-      <index id="27" parent="15" name="FK_SCORE_COURSE">
+      <index id="28" parent="15" name="FK_SCORE_COURSE">
         <columns>CNO</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="28" parent="15" name="PRIMARY">
+      <key id="29" parent="15" name="PRIMARY">
         <columns>SNO
 CNO</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="29" parent="15" name="FK_SCORE_STUDENT">
+      <foreign-key id="30" parent="15" name="FK_SCORE_STUDENT">
         <columns>SNO</columns>
         <ref-key>~.student.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="30" parent="15" name="FK_SCORE_COURSE">
+      <foreign-key id="31" parent="15" name="FK_SCORE_COURSE">
         <columns>CNO</columns>
         <ref-key>~.course.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="31" parent="16" name="SNO">
+      <column id="32" parent="16" name="SNO">
         <mandatory>1</mandatory>
         <data-type>varchar(3)|0</data-type>
       </column>
-      <column id="32" parent="16" name="SNAME">
+      <column id="33" parent="16" name="SNAME">
         <mandatory>1</mandatory>
         <data-type>varchar(4)|0</data-type>
       </column>
-      <column id="33" parent="16" name="SSEX">
+      <column id="34" parent="16" name="SSEX">
         <mandatory>1</mandatory>
         <data-type>varchar(2)|0</data-type>
       </column>
-      <column id="34" parent="16" name="SBIRTHDAY">
+      <column id="35" parent="16" name="SBIRTHDAY">
         <data-type>datetime|0</data-type>
       </column>
-      <column id="35" parent="16" name="CLASS">
+      <column id="36" parent="16" name="CLASS">
         <data-type>varchar(5)|0</data-type>
       </column>
-      <key id="36" parent="16" name="PRIMARY">
+      <key id="37" parent="16" name="PRIMARY">
         <columns>SNO</columns>
         <primary>1</primary>
       </key>
-      <column id="37" parent="17" name="TNO">
+      <column id="38" parent="17" name="TNO">
         <mandatory>1</mandatory>
         <data-type>varchar(3)|0</data-type>
       </column>
-      <column id="38" parent="17" name="TNAME">
+      <column id="39" parent="17" name="TNAME">
         <mandatory>1</mandatory>
         <data-type>varchar(4)|0</data-type>
       </column>
-      <column id="39" parent="17" name="TSEX">
+      <column id="40" parent="17" name="TSEX">
         <mandatory>1</mandatory>
         <data-type>varchar(2)|0</data-type>
       </column>
-      <column id="40" parent="17" name="TBIRTHDAY">
+      <column id="41" parent="17" name="TBIRTHDAY">
         <mandatory>1</mandatory>
         <data-type>datetime|0</data-type>
       </column>
-      <column id="41" parent="17" name="PROF">
+      <column id="42" parent="17" name="PROF">
         <data-type>varchar(6)|0</data-type>
       </column>
-      <column id="42" parent="17" name="DEPART">
+      <column id="43" parent="17" name="DEPART">
         <mandatory>1</mandatory>
         <data-type>varchar(10)|0</data-type>
       </column>
-      <key id="43" parent="17" name="PRIMARY">
+      <key id="44" parent="17" name="PRIMARY">
         <columns>TNO</columns>
         <primary>1</primary>
       </key>
+      <column id="45" parent="18" name="low">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="46" parent="18" name="upp">
+        <data-type>tinyint(4)|0</data-type>
+      </column>
+      <column id="47" parent="18" name="rank">
+        <data-type>char(1)|0</data-type>
+      </column>
     </database-model>
   </data-source>
 </component>
