@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/javaEnhance/javaEnhance.iml" filepath="$PROJECT_DIR$/javaEnhance/javaEnhance.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/practice.iml" filepath="$PROJECT_DIR$/.idea/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqltraining/sqltraining.iml" filepath="$PROJECT_DIR$/sqltraining/sqltraining.iml" />
       <module fileurl="file://$PROJECT_DIR$/training/training.iml" filepath="$PROJECT_DIR$/training/training.iml" />
