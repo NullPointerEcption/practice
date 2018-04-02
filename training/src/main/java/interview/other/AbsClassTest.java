@@ -1,9 +1,9 @@
-package interview;
+package interview.other;
 
 /**
  * Created by Administrator on 2018/02/19.
+ * 测试abstract中能否含有private成员
  */
-//测试abstract中能否含有private成员
 public abstract class AbsClassTest {
     private String name;
 
@@ -24,4 +24,5 @@ public abstract class AbsClassTest {
 
         test.fun();
     }
+
 }

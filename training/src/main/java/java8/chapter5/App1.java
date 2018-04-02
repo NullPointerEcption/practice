@@ -313,6 +313,7 @@ public class App1 {
 
     @Test
     public void method13() {
+        //都是直接产生的原始类型的数字，没有装箱拆箱操作
         //rangeClosed包含结束值 range不包含结束值
         IntStream.rangeClosed(1,100).filter(i->i%3==0).forEach(System.out::println);
 

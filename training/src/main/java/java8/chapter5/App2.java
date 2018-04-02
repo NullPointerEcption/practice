@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 /**
@@ -45,6 +46,9 @@ public class App2 {
         }
     }
 
+    /**
+     * 创建无限流
+     */
     @Test
     public void method4() {
 //        Stream.iterate(0, n -> n + 2)
@@ -56,4 +60,31 @@ public class App2 {
         ).limit(20).forEach(t->System.out.println(t[0]+","+t[1]));
     }
 
+    //--------------------使用并行流的错误实例---start--------------------------------------------------
+    public static long sideEffectSum(long n) {
+        Accumulator accumulator = new Accumulator();
+        LongStream.rangeClosed(1, n)
+//                .parallel()//如果改成了并行，则永远不会得到正确结果 因为Accumulator::add不是一个原子性操作
+                .forEach(accumulator::add);
+        return accumulator.total;
+    }
+
+    @Test
+    public void method5() {
+        System.out.println(sideEffectSum(1000));
+    }
+
+    //--------------------使用并行流的错误实例---end----------------------------------------------------
+
+    @Test
+    public void method6() {
+
+    }
+
+
 }
+class Accumulator {
+    public long total = 0;
+    public void add(long value) { total += value; }//非原子性操作
+}
+
