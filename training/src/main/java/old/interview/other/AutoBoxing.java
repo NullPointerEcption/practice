@@ -1,8 +1,6 @@
-package interview.other;
+package old.interview.other;
 
 import org.junit.Test;
-
-import java.util.List;
 
 public class AutoBoxing {
 

@@ -1,4 +1,4 @@
-package interview.multithread;
+package old.interview.multithread;
 
 public class DeadLockDemo {
 

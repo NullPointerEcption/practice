@@ -1,4 +1,4 @@
-package training.ds;
+package old.ds;
 
 import java.util.ArrayDeque;
 

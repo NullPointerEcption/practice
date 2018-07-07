@@ -1,4 +1,4 @@
-package multithread.chapter4;
+package old.multithread.chapter4;
 
 import java.io.FileWriter;
 import java.io.IOException;

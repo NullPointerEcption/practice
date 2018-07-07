@@ -1,4 +1,4 @@
-package training.ds;
+package old.ds;
 
 import org.junit.Test;
 import org.testng.Assert;

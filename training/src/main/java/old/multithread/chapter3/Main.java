@@ -1,4 +1,4 @@
-package multithread.chapter3;
+package old.multithread.chapter3;
 
 public class Main {
     public static void main(String[] args) {

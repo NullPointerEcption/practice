@@ -1,4 +1,4 @@
-package interview.other;
+package old.interview.other;
 
 public class TestByteCode {
     public static void main(String[] args) throws Exception {

@@ -1,4 +1,4 @@
-package interview.multithread;
+package old.interview.multithread;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

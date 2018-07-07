@@ -1,4 +1,4 @@
-package multithread.chapter3;
+package old.multithread.chapter3;
 
 import java.util.Random;
 
