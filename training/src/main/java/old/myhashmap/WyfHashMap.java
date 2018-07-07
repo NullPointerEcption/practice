@@ -31,7 +31,7 @@ public class WyfHashMap<K, V> implements MyMap<K, V> {
 
     public WyfHashMap(int defaultInitSize, float defaultLoadFactor) {
         if (defaultInitSize < 0) {
-            throw new IllegalArgumentException("Illegal initial capcacity:" + defaultInitSize);
+            throw new IllegalArgumentException("Illegal initial capacity:" + defaultInitSize);
         }
         if (defaultLoadFactor < 0 || Float.isNaN(defaultLoadFactor)) {
             throw new IllegalArgumentException("Illegal defaultLoadFactor:" + defaultLoadFactor);
@@ -54,7 +54,7 @@ public class WyfHashMap<K, V> implements MyMap<K, V> {
             resize(2 * tableSize);//对数组进行扩容，变成当前长度的两倍
         }
 
-        //得到hahs值 算出在数组中的位置
+        //得到hash值 算出在数组中的位置
         int index = hash(k) & (tableSize - 1);
 
         //如果是第一次添加

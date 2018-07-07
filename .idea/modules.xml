@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/concurrent/concurrent.iml" filepath="$PROJECT_DIR$/concurrent/concurrent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/effectivejava/effectivejava.iml" filepath="$PROJECT_DIR$/effectivejava/effectivejava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multithread/multithread.iml" filepath="$PROJECT_DIR$/multithread/multithread.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/practice.iml" filepath="$PROJECT_DIR$/.idea/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqltraining/sqltraining.iml" filepath="$PROJECT_DIR$/sqltraining/sqltraining.iml" />
       <module fileurl="file://$PROJECT_DIR$/training/training.iml" filepath="$PROJECT_DIR$/training/training.iml" />

@@ -9,7 +9,7 @@ public interface MyMap<K, V> {
      * @param v
      * @return
      */
-    public abstract V put(K k, V v);
+    V put(K k, V v);
 
     /**
      * 从map中通过key 获取一个值
@@ -17,11 +17,10 @@ public interface MyMap<K, V> {
      * @param k
      * @return
      */
-    public abstract V get(K k);
+    V get(K k);
 
     interface Entry<K, V> {
-        public abstract K getKey();
-
-        public abstract V getValue();
+        K getKey();
+        V getValue();
     }
 }

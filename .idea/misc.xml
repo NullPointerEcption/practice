@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/training/pom.xml" />
         <option value="$PROJECT_DIR$/sqltraining/pom.xml" />
         <option value="$PROJECT_DIR$/javaEnhance/pom.xml" />
+        <option value="$PROJECT_DIR$/concurrent/pom.xml" />
+        <option value="$PROJECT_DIR$/effectivejava/pom.xml" />
+        <option value="$PROJECT_DIR$/multithread/pom.xml" />
       </list>
     </option>
   </component>

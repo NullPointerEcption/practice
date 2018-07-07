@@ -113,7 +113,7 @@ public class App1 {
     @Test
     public void method5() {
         //        [1, 2, 3, 4, 5]，应该返回[1, 4, 9, 16, 25]。
-        //Arrays.asList(1,2,3,4,5).stream().map(i->i*i).forEach(System.out::println);
+        //Arrays.asList(1,2,3,4,5).stream().map(orderNum->orderNum*orderNum).forEach(System.out::println);
 
         //例如，给定列表[1, 2, 3]和列表[3, 4]，应该返回[(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)]。
         List<Integer> nums1 = Arrays.asList(1, 2, 3);

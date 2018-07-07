@@ -28,7 +28,7 @@ public class App {
 
         //Function:使用function 将List<String> 里的每个字符串 输出为 List<Integer> 每个字符串的长度
        // List<Integer> strLength = map(Arrays.asList("aaa", "bbbb", "cccc"), s -> s.length());
-        //strLength.forEach(i-> System.out.println(i));
+        //strLength.forEach(orderNum-> System.out.println(orderNum));
 
         List<String> result = map(Arrays.asList(3, 4, 5, 6, 7, 80), i -> i + "hello");
         List<String> result2 = map(Arrays.asList(3, 4, 5, 6, 7, 80), new Function<Integer, String>() {

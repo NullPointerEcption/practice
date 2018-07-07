@@ -5,13 +5,11 @@ package old.interview.other;
  */
 public class ToBinary {
     public static void main(String[] args) {
-        String s = Integer.toBinaryString(15);
-        System.out.println(s);
-
-        toBinary(17);
+        toBinary(100);
+        System.out.println(toBinary2(10));
     }
 
-    public static String toBinary(int n) {
+    public static void toBinary(int n) {
 
         String str = "";
         while (n != 0) {
@@ -19,9 +17,15 @@ public class ToBinary {
             n = n / 2;
         }
         System.out.println(str);
+    }
 
-
-        return "";
+    public static String toBinary2(int n) {
+        String res = "";
+        while (n > 0) {
+            res = (n & 1) + res;
+            n = n >>> 1;
+        }
+        return res;
     }
 
 }

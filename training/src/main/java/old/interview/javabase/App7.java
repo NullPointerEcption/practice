@@ -52,7 +52,7 @@ class ThreadDecrement extends Thread {
     public void run() {
         super.run();
         this.resource.decrement();
-        System.out.println(Thread.currentThread().getName() + "After Decre the i is :" + resource.getI());
+        System.out.println(Thread.currentThread().getName() + "After Decre the orderNum is :" + resource.getI());
     }
 }
 
@@ -67,6 +67,6 @@ class ThreadIncrement extends Thread {
     public void run() {
         super.run();
         this.resource.increment();
-        System.out.println(Thread.currentThread().getName() + "After Incre the i is :" + resource.getI());
+        System.out.println(Thread.currentThread().getName() + "After Incre the orderNum is :" + resource.getI());
     }
 }

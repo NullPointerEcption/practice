@@ -39,9 +39,9 @@ public class App1 {
 //        String value = props.getProperty(name);
 //        if (value != null) {
 //            try {
-//                int i = Integer.parseInt(value);
-//                if (i > 0) {
-//                    return i;
+//                int orderNum = Integer.parseInt(value);
+//                if (orderNum > 0) {
+//                    return orderNum;
 //                }
 //            } catch (NumberFormatException nfe) { }
 //        }
