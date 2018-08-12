@@ -8,6 +8,11 @@ import java.util.List;
  * 测试一下泛型
  */
 public class App10 {
+    /**
+     * 测试一下
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
         List<String> list=new ArrayList<>();
         list.add("str1");

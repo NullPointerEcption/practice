@@ -33,6 +33,7 @@ public class ReentrantLockDemo implements Runnable {
 
     public void method2() {
 
+
         try {
             lock.lock();
             System.out.println(Thread.currentThread().getName() + "进入了method2...");
@@ -60,7 +61,11 @@ public class ReentrantLockDemo implements Runnable {
 
     public static void main(String[] args) {
         ReentrantLockDemo demo = new ReentrantLockDemo();
-        new Thread(()->{demo.method1();},"t1").start();
-        new Thread(()->{demo.method2();},"t2").start();
+        new Thread(() -> {
+            demo.method1();
+        }, "t1").start();
+        new Thread(() -> {
+            demo.method2();
+        }, "t2").start();
     }
 }
