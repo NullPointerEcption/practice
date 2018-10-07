@@ -1,7 +1,5 @@
 package future;
 
-import com.sun.xml.internal.ws.util.CompletedFuture;
-
 import java.util.concurrent.*;
 
 public class FutureDemo {
