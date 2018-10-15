@@ -17,7 +17,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="concurrent" target="1.8" />
-      <module name="effectivejava" target="1.5" />
+      <module name="effectivejava" target="1.8" />
       <module name="multithread" target="1.8" />
       <module name="sqltraining" target="1.5" />
       <module name="training" target="1.8" />
