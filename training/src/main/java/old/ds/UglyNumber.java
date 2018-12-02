@@ -1,7 +1,7 @@
 package old.ds;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 /**
  * 丑数 只能被2,3,5整除的数 1是第一个丑数

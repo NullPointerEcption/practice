@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="concurrent" />
+        <module name="distributed" />
         <module name="effectivejava" />
         <module name="javaEnhance" />
         <module name="multithread" />
@@ -17,7 +18,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="concurrent" target="1.8" />
+      <module name="distributed" target="1.8" />
       <module name="effectivejava" target="1.8" />
+      <module name="exceltraining" target="1.5" />
       <module name="multithread" target="1.8" />
       <module name="sqltraining" target="1.5" />
       <module name="training" target="1.8" />
@@ -27,7 +30,9 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="concurrent" options="" />
+      <module name="distributed" options="" />
       <module name="effectivejava" options="" />
+      <module name="exceltraining" options="" />
       <module name="multithread" options="" />
       <module name="sqltraining" options="" />
       <module name="training" options="" />

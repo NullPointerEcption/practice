@@ -1,7 +1,5 @@
 package Chapter3.Item8;// Simple immutable two-dimensional integer point class - Page 37
 
-import java.util.*;
-
 public class Point {
     private final int x;
     private final int y;

@@ -1,6 +1,6 @@
 package chapter2.Item6;// Can you spot the "memory leak"?
 
-import java.util.*;
+import java.util.Arrays;
 
 public class Stack {
     private Object[] elements;

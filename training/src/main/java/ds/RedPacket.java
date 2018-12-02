@@ -1,7 +1,5 @@
 package ds;
 
-import org.testng.annotations.Test;
-
 import java.util.Arrays;
 import java.util.Random;
 
@@ -10,7 +8,6 @@ import java.util.Random;
  * CreateTime: 2018/7/6
  * 红包模拟算法
  */
-@Test
 public class RedPacket {
 
     static int maxBound = 500;

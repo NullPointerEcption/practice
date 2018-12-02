@@ -3,8 +3,6 @@ package old.myhashmap;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Objects.hash;
-
 /**
  * 自定义的HashMap实现自MyMap
  *

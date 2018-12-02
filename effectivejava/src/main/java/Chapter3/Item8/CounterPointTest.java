@@ -1,6 +1,7 @@
 package Chapter3.Item8;// Test program that uses CounterPoint as Point
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class CounterPointTest {
     // Initialize UnitCircle to contain all Points on the unit circle

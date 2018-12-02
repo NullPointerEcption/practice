@@ -1,7 +1,5 @@
 package threadlocal;
 
-import commoncls.CyclicBarrierDemo;
-
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 

@@ -1,9 +1,5 @@
 package other;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.*;
-
 /**
  * 向账户里面存钱
  */

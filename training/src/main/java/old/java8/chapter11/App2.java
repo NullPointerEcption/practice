@@ -2,7 +2,6 @@ package old.java8.chapter11;
 
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 

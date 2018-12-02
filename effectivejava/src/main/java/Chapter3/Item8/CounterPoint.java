@@ -1,6 +1,6 @@
 package Chapter3.Item8;// Trivial subclass of Point - doesn't add a value component - Page 39
 
-import java.util.concurrent.atomic.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CounterPoint extends Point {
     private static final AtomicInteger counter =

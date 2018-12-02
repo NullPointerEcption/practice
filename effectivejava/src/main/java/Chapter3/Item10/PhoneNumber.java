@@ -1,6 +1,7 @@
 package Chapter3.Item10;// Adding a toString method to PhoneNumber - page 52
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class PhoneNumber {
     private final short areaCode;

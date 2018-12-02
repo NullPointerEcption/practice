@@ -1,12 +1,11 @@
 package old.java8.chapter3;
 
-import org.testng.annotations.Test;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
+
 import static java.util.stream.Collectors.toList;
 
 /**

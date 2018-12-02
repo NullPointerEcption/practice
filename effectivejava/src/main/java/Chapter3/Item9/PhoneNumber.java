@@ -1,6 +1,7 @@
 package Chapter3.Item9;// Shows the need for overriding hashcode when you override equals - Pages 45-46
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class PhoneNumber {
     private final short areaCode;

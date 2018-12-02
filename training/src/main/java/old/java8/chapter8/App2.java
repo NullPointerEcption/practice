@@ -1,7 +1,7 @@
 package old.java8.chapter8;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.testng.Assert;
 
 import java.util.Arrays;
 import java.util.List;

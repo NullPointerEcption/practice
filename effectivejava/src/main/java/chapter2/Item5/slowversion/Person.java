@@ -1,6 +1,8 @@
 package chapter2.Item5.slowversion;// Creates lots of unnecessary duplicate objects - page 20-21
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class Person {
     private final Date birthDate;
