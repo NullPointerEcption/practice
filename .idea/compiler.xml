@@ -14,16 +14,17 @@
         <module name="practice" />
         <module name="sqltraining" />
         <module name="training" />
+        <module name="trendyexample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="concurrent" target="1.8" />
       <module name="distributed" target="1.8" />
       <module name="effectivejava" target="1.8" />
-      <module name="exceltraining" target="1.5" />
       <module name="multithread" target="1.8" />
       <module name="sqltraining" target="1.5" />
       <module name="training" target="1.8" />
+      <module name="trendyexample" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -32,10 +33,10 @@
       <module name="concurrent" options="" />
       <module name="distributed" options="" />
       <module name="effectivejava" options="" />
-      <module name="exceltraining" options="" />
       <module name="multithread" options="" />
       <module name="sqltraining" options="" />
       <module name="training" options="" />
+      <module name="trendyexample" options="" />
     </option>
   </component>
 </project>

@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/practice.iml" filepath="$PROJECT_DIR$/.idea/practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqltraining/sqltraining.iml" filepath="$PROJECT_DIR$/sqltraining/sqltraining.iml" />
       <module fileurl="file://$PROJECT_DIR$/training/training.iml" filepath="$PROJECT_DIR$/training/training.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trendyexample/trendyexample.iml" filepath="$PROJECT_DIR$/trendyexample/trendyexample.iml" />
     </modules>
   </component>
 </project>
