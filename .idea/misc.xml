@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/multithread/pom.xml" />
         <option value="$PROJECT_DIR$/distributed/pom.xml" />
         <option value="$PROJECT_DIR$/trendyexample/pom.xml" />
+        <option value="$PROJECT_DIR$/tokendemo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

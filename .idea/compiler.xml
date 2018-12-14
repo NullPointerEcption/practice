@@ -13,6 +13,7 @@
         <module name="multithread" />
         <module name="practice" />
         <module name="sqltraining" />
+        <module name="tokendemo" />
         <module name="training" />
         <module name="trendyexample" />
       </profile>
@@ -23,6 +24,7 @@
       <module name="effectivejava" target="1.8" />
       <module name="multithread" target="1.8" />
       <module name="sqltraining" target="1.5" />
+      <module name="tokendemo" target="1.8" />
       <module name="training" target="1.8" />
       <module name="trendyexample" target="1.5" />
     </bytecodeTargetLevel>
@@ -35,6 +37,7 @@
       <module name="effectivejava" options="" />
       <module name="multithread" options="" />
       <module name="sqltraining" options="" />
+      <module name="tokendemo" options="" />
       <module name="training" options="" />
       <module name="trendyexample" options="" />
     </option>
