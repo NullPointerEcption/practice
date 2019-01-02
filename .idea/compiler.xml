@@ -9,6 +9,7 @@
         <module name="concurrent" />
         <module name="distributed" />
         <module name="effectivejava" />
+        <module name="interview" />
         <module name="javaEnhance" />
         <module name="multithread" />
         <module name="practice" />
@@ -22,6 +23,7 @@
       <module name="concurrent" target="1.8" />
       <module name="distributed" target="1.8" />
       <module name="effectivejava" target="1.8" />
+      <module name="interview" target="1.5" />
       <module name="multithread" target="1.8" />
       <module name="sqltraining" target="1.5" />
       <module name="tokendemo" target="1.8" />
@@ -35,9 +37,10 @@
       <module name="concurrent" options="" />
       <module name="distributed" options="" />
       <module name="effectivejava" options="" />
+      <module name="interview" options="" />
       <module name="multithread" options="" />
       <module name="sqltraining" options="" />
-      <module name="tokendemo" options="" />
+      <module name="tokendemo" options="-parameters" />
       <module name="training" options="" />
       <module name="trendyexample" options="" />
     </option>
