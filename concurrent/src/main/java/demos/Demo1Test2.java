@@ -5,20 +5,20 @@ package demos;
  * @author: WangYuFei
  * @create: 2019-01-02 16:33
  **/
-public class Demo1Test {
+public class Demo1Test2 {
 
     public static void main(String[] args) {
-        new BankThread("Thread_Husband").start();
-        new BankThread("Thread_Wife").start();
+        new BankThread2("Thread_Husband").start();
+        new BankThread2("Thread_Wife").start();
     }
 
 }
 
-class BankThread extends Thread {
+class BankThread2 extends Thread {
 
     private String name;
 
-    public BankThread(String name) {
+    public BankThread2(String name) {
         super(name);
     }
 
@@ -26,8 +26,8 @@ class BankThread extends Thread {
 
     @Override
     public void run() {
-        synchronized ("锁") {
-            while (true) {
+        while (true) {
+            synchronized ("锁") {
                 "锁".notify();
                 if (count > 0) {
                     System.out.println(Thread.currentThread().getName() + ",取走一千，剩余" + (count - 1000));
@@ -42,6 +42,7 @@ class BankThread extends Thread {
                     break;
                 }
             }
+
         }
     }
 }
