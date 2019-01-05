@@ -9,16 +9,21 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create: 2019-01-02 17:54
  **/
 public class Demo2Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Ticket target = new Ticket();
-        new Thread(target).start();
-        new Thread(target).start();
+        Thread thread = new Thread(target);
+        thread.start();
+        Thread thread1 = new Thread(target);
+        thread1.start();
+        thread.join();
+        thread1.join();
+        System.out.println(Ticket.ticket);
     }
 }
 
 class Ticket implements Runnable {
     //共100票
-    int ticket = 100;
+    static int ticket = 100;
 
     //创建Lock锁对象
     Lock ck = new ReentrantLock();
@@ -29,18 +34,21 @@ class Ticket implements Runnable {
         while (true) {
             //synchronized (lock){
             ck.lock();
-            if (ticket > 0) {
-                //模拟选坐的操作
-                //try {
-                //    Thread.sleep(10);
-                //} catch (InterruptedException e) {
-                //    e.printStackTrace();
-                //}
-                System.out.println(Thread.currentThread().getName() + "正在卖票:" + ticket--);
-            } else {
-                break;
+            try {
+                if (ticket > 0) {
+                    //模拟选坐的操作
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(Thread.currentThread().getName() + "正在卖票:" + ticket--);
+                } else {
+                    break;
+                }
+            } finally {
+                ck.unlock();
             }
-            ck.unlock();
             //}
         }
     }
