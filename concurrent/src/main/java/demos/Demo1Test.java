@@ -32,8 +32,8 @@ class BankThread extends Thread {
     @Override
     public void run() {
         while (true) {
-            ck.lock();
-            //synchronized ("锁") {
+
+            synchronized ("锁") {
                 //"锁".notify();
                 if (count > 0) {
                     System.out.println(Thread.currentThread().getName() + ",取走一千，剩余" + (count - 1000));
@@ -47,8 +47,8 @@ class BankThread extends Thread {
                     System.out.println("take over...");
                     break;
                 }
-            //}
-            ck.unlock();
+            }
+
         }
     }
 }

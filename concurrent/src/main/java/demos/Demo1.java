@@ -22,7 +22,7 @@ class BankAccount {
             while (true) {
                 lock.notifyAll();
                 if (money > 0) {
-                    money = money - 1000;
+                    money = money - 1;
                     System.out.println(Thread.currentThread().getName() + " 取出一千块，余额为：" + money);
                     try {
                         lock.wait();
