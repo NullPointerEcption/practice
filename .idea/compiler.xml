@@ -9,10 +9,10 @@
         <module name="concurrent" />
         <module name="distributed" />
         <module name="effectivejava" />
+        <module name="interview" />
         <module name="javaEnhance" />
         <module name="multithread" />
         <module name="practice" />
-        <module name="rbmpsimple" />
         <module name="sqltraining" />
         <module name="tokendemo" />
         <module name="training" />
@@ -23,6 +23,7 @@
       <module name="concurrent" target="1.8" />
       <module name="distributed" target="1.8" />
       <module name="effectivejava" target="1.8" />
+      <module name="interview" target="1.5" />
       <module name="multithread" target="1.8" />
       <module name="rbmpsimple" target="1.5" />
       <module name="sqltraining" target="1.5" />
@@ -37,10 +38,11 @@
       <module name="concurrent" options="" />
       <module name="distributed" options="" />
       <module name="effectivejava" options="" />
+      <module name="interview" options="" />
       <module name="multithread" options="" />
       <module name="rbmpsimple" options="" />
       <module name="sqltraining" options="" />
-      <module name="tokendemo" options="" />
+      <module name="tokendemo" options="-parameters" />
       <module name="training" options="" />
       <module name="trendyexample" options="" />
     </option>

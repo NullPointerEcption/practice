@@ -1,5 +1,8 @@
 package demos;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @description: ${description}
  * @author: WangYuFei
@@ -24,24 +27,28 @@ class BankThread extends Thread {
 
     static int count = 5000;
 
+    Lock ck = new ReentrantLock();
+
     @Override
     public void run() {
-        synchronized ("锁") {
-            while (true) {
-                "锁".notify();
+        while (true) {
+
+            synchronized ("锁") {
+                //"锁".notify();
                 if (count > 0) {
                     System.out.println(Thread.currentThread().getName() + ",取走一千，剩余" + (count - 1000));
                     count -= 1000;
-                    try {
-                        "锁".wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    //try {
+                    //    "锁".wait();
+                    //} catch (InterruptedException e) {
+                    //    e.printStackTrace();
+                    //}
                 } else {
                     System.out.println("take over...");
                     break;
                 }
             }
+
         }
     }
 }
