@@ -17,6 +17,7 @@
         <module name="tokendemo" />
         <module name="training" />
         <module name="trendyexample" />
+        <module name="webpractice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +31,7 @@
       <module name="tokendemo" target="1.8" />
       <module name="training" target="1.8" />
       <module name="trendyexample" target="1.5" />
+      <module name="webpractice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

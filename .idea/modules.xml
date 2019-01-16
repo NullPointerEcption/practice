@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/tokendemo/tokendemo.iml" filepath="$PROJECT_DIR$/tokendemo/tokendemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/training/training.iml" filepath="$PROJECT_DIR$/training/training.iml" />
       <module fileurl="file://$PROJECT_DIR$/trendyexample/trendyexample.iml" filepath="$PROJECT_DIR$/trendyexample/trendyexample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webpractice/webpractice.iml" filepath="$PROJECT_DIR$/webpractice/webpractice.iml" />
     </modules>
   </component>
 </project>
