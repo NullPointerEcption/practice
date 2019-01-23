@@ -13,6 +13,8 @@
         <module name="javaEnhance" />
         <module name="multithread" />
         <module name="practice" />
+        <module name="rpc-demo-api" />
+        <module name="rpc-demo-service" />
         <module name="sqltraining" />
         <module name="tokendemo" />
         <module name="training" />
@@ -26,7 +28,8 @@
       <module name="effectivejava" target="1.8" />
       <module name="interview" target="1.5" />
       <module name="multithread" target="1.8" />
-      <module name="rbmpsimple" target="1.5" />
+      <module name="rpc-demo-api" target="8" />
+      <module name="rpc-demo-service" target="8" />
       <module name="sqltraining" target="1.5" />
       <module name="tokendemo" target="1.8" />
       <module name="training" target="1.8" />
@@ -42,7 +45,8 @@
       <module name="effectivejava" options="" />
       <module name="interview" options="" />
       <module name="multithread" options="" />
-      <module name="rbmpsimple" options="" />
+      <module name="rpc-demo-api" options="" />
+      <module name="rpc-demo-service" options="" />
       <module name="sqltraining" options="" />
       <module name="tokendemo" options="-parameters" />
       <module name="training" options="" />

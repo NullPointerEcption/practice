@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/tokendemo/pom.xml" />
         <option value="$PROJECT_DIR$/interview/pom.xml" />
         <option value="$PROJECT_DIR$/webpractice/pom.xml" />
+        <option value="$PROJECT_DIR$/api/pom.xml" />
+        <option value="$PROJECT_DIR$/service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -22,5 +24,5 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8.0_181" project-jdk-type="JavaSDK" />
 </project>
