@@ -12,6 +12,7 @@
         <module name="interview" />
         <module name="javaEnhance" />
         <module name="multithread" />
+        <module name="netty-demos" />
         <module name="rbmpsimple" />
         <module name="sqltraining" />
         <module name="tokendemo" />
@@ -26,6 +27,7 @@
       <module name="effectivejava" target="1.8" />
       <module name="interview" target="1.5" />
       <module name="multithread" target="1.8" />
+      <module name="netty-demos" target="1.5" />
       <module name="rbmpsimple" target="7" />
       <module name="rpc-demo-api" target="1.5" />
       <module name="rpc-demo-service" target="1.5" />
@@ -46,6 +48,7 @@
       <module name="effectivejava" options="" />
       <module name="interview" options="" />
       <module name="multithread" options="" />
+      <module name="netty-demos" options="" />
       <module name="rbmpsimple" options="" />
       <module name="rpc-demo-api" options="" />
       <module name="rpc-demo-service" options="" />
