@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/rpcapi/pom.xml" />
         <option value="$PROJECT_DIR$/rpcservice/pom.xml" />
         <option value="$PROJECT_DIR$/rbmpsimple/pom.xml" />
+        <option value="$PROJECT_DIR$/nettydemos/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-demos/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
