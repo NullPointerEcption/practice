@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/rpcapi/pom.xml" />
         <option value="$PROJECT_DIR$/rpcservice/pom.xml" />
         <option value="$PROJECT_DIR$/rbmpsimple/pom.xml" />
+        <option value="$PROJECT_DIR$/nettydemos/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-demos/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -27,5 +29,5 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8.0_181" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
