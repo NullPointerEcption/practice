@@ -12,10 +12,7 @@
         <module name="interview" />
         <module name="javaEnhance" />
         <module name="multithread" />
-        <module name="practice" />
         <module name="rbmpsimple" />
-        <module name="rpcapi" />
-        <module name="rpcservice" />
         <module name="sqltraining" />
         <module name="tokendemo" />
         <module name="training" />

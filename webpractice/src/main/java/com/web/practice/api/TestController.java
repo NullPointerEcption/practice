@@ -21,7 +21,7 @@ public class TestController {
     @GetMapping
     public void test() {
         Cache<Object, Object> build = CacheBuilder.newBuilder().build();
-    build.put("a", "aa");
+        build.put("a", "aa");
     }
 
 }
