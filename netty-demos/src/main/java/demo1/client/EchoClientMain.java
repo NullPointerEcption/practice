@@ -1,4 +1,4 @@
-package demo1.server;
+package demo1.client;
 
 /**
  * <p>
@@ -6,11 +6,10 @@ package demo1.server;
  * </p>
  *
  * @author WangYuFei
- * @date 2019-01-24 21:27
+ * @date 2019-01-25 13:44
  **/
-public class EchoServerMain {
-
+public class EchoClientMain {
     public static void main(String[] args) throws Exception {
-        new EchoServer().run();
+        new EchoClient().run();
     }
 }
