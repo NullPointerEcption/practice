@@ -1,4 +1,4 @@
-package demo3.client;
+package demo4.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -8,11 +8,12 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.DelimiterBasedFrameDecoder;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
-import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
+import unit.NettyDemoConstant;
 
 /**
  * <p>
@@ -38,7 +39,7 @@ public class EchoClient {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(
                                     new FixedLengthFrameDecoder(100),
-                                    new LineBasedFrameDecoder(1024),
+                                    new DelimiterBasedFrameDecoder(1024, NettyDemoConstant.SEPERATOR_BUF),
                                     new StringEncoder(CharsetUtil.UTF_8),
                                     new StringDecoder(CharsetUtil.UTF_8),
                                     new EchoClientHandler());
