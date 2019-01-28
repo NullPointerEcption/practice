@@ -22,7 +22,7 @@ public class ApiMain {
 
     private static IProductService rpc(final Class<IProductService> clazz) {
         return (IProductService) Proxy.newProxyInstance(clazz.getClassLoader(), new Class[]{clazz}, new InvocationHandler() {
-            @Override
+
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 Socket socket = new Socket("127.0.0.1", 8888);
 
