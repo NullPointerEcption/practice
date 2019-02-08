@@ -7,3 +7,5 @@
 ## sqltraining 在网上搜的数据库语法练习题
 
 ## training 最近的练习
+
+> so fun
