@@ -7,13 +7,10 @@ public class AlternatePrint2 {
 
 
     public static void main(String[] args) {
-        NumberPrinter numberPrinter = new NumberPrinter();
-        new Thread(() -> {
-            numberPrinter.printAdd();
-        }, "thread A").start();
-        new Thread(() -> {
-            numberPrinter.printAdd();
-        }, "thread B").start();
+        Object lock = new Object();
+        NumberPrinter numberPrinter = new NumberPrinter(lock);
+        new Thread(numberPrinter::printAdd, "thread A").start();
+        new Thread(numberPrinter::printAdd, "thread B").start();
     }
 
 
@@ -21,20 +18,28 @@ public class AlternatePrint2 {
 
 class NumberPrinter {
 
+    private final Object lock;
+
+    public NumberPrinter(Object lock) {
+        this.lock = lock;
+    }
+
     private int number;
 
-    public synchronized void printAdd() {
-        while (number < 1000) {
-            notifyAll();
-            number++;
-            System.out.println(Thread.currentThread().getName() + " - the number is ：" + number);
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public void printAdd() {
+        synchronized (lock) {
+            while (number < 100) {
+                lock.notify();
+                number++;
+                System.out.println(Thread.currentThread().getName() + " - the number is ：" + number);
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            lock.notify();
         }
-        notifyAll();
     }
 
 

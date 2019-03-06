@@ -25,7 +25,7 @@ public class AlternatePrint {
                         try {
                             if(isThreadANow.get()){
                                 System.out.println(Thread.currentThread().getName() + "打印：" + num.incrementAndGet());
-                                Thread.sleep(1000);
+                                //Thread.sleep(1000);
                                 isThreadANow.set(false);
                                 lock.notify();
                                 lock.wait();
@@ -48,7 +48,7 @@ public class AlternatePrint {
                         try {
                             if(!isThreadANow.get()){
                                 System.out.println(Thread.currentThread().getName() + "打印：" + num.incrementAndGet());
-                                Thread.sleep(1000);
+                                //Thread.sleep(1000);
                                 isThreadANow.set(true);
                                 lock.notify();
                                 lock.wait();

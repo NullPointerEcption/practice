@@ -10,9 +10,7 @@ public class SeqPrint2 {
         final HandleNums handleNums = new HandleNums(orderNum);
         for (int i = 0; i < 10; i++) {
             final int targetNum = i;
-            new Thread(() -> {
-                handleNums.printAndIncr(targetNum);
-            }).start();
+            new Thread(() -> handleNums.printAndIncr(targetNum)).start();
         }
     }
 }

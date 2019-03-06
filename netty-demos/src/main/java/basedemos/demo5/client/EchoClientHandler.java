@@ -17,6 +17,10 @@ import java.util.concurrent.TimeUnit;
  **/
 public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 
+    @Override
+    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("echoclientHandler register...");
+    }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
