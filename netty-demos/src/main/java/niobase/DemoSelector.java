@@ -18,22 +18,24 @@ import java.util.Iterator;
  **/
 public class DemoSelector {
     public static void main(String[] args) throws Exception {
+        Selector selector = Selector.open();
         ServerSocketChannel serverChannel = ServerSocketChannel.open();
         serverChannel.configureBlocking(false);
         serverChannel.socket().bind(new InetSocketAddress(9999));
-        Selector selector = Selector.open();
         serverChannel.register(selector, SelectionKey.OP_ACCEPT);
+
         while (true) {
             int n = selector.select();
             if (n == 0) continue;
+
             Iterator ite = selector.selectedKeys().iterator();
             while (ite.hasNext()) {
                 SelectionKey key = (SelectionKey) ite.next();
                 if (key.isAcceptable()) {
-                    System.out.println("accept");
+                    System.out.println("accept a new connection ... ");
                     SocketChannel channel = ((ServerSocketChannel) key.channel()).accept();
                     channel.configureBlocking(false);
-                    channel.write(ByteBuffer.wrap(new String("hello client,this is server \n").getBytes()));
+                    channel.write(ByteBuffer.wrap("hello client,this is server \n".getBytes()));
                     //将选择器注册到连接到的客户端信道，
                     //并指定该信道key值的属性为OP_READ，
                     //同时为该信道指定关联的附件

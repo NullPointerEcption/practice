@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebCHatClient</title>
+</head>
+<body>
+请输入消息：<input type="text" id="send_msg"/> <input type="button" value="Send" onclick="CHAT.chat()" name="Send"/>
+
+<hr/>
+
+收到的消息：<input type="button" value="Receive" onclick="" name="Receive"/>
+<div id="rec_msg" style="height: 300px;width: 900px;background-color: aqua"></div>
+</body>
+<script type="application/javascript">
+
+    window.CHAT = {
+        socket: null,
+        init: function () {
+            CHAT.socket = new WebSocket("ws://localhost:8888/ws");
+            CHAT.socket.onopen = function () {
+                console.log("open")
+            };
+            CHAT.socket.onerror = function () {
+                console.log("error")
+            };
+            CHAT.socket.onclose = function () {
+                console.log("close")
+            };
+            CHAT.socket.onmessage = function (e) {
+                console.log("msg" + e.data);
+                var msgDiv = document.getElementById("rec_msg");
+                msgDiv.innerHTML = msgDiv.innerHTML + "<br/>" + e.data;
+            };
+
+        },
+        chat: function () {
+            var ele = document.getElementById("send_msg");
+            CHAT.socket.send(ele.value);
+        }
+    }
+
+    CHAT.init();
+
+</script>
+</html>

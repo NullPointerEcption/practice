@@ -44,7 +44,7 @@ public class ChatServer {
                                     //websocket 支持协议
                                     .addLast(new WebSocketServerProtocolHandler("/ws"))
                                     //自定义的handler 处理客户端消息
-                                    .addLast();
+                                    .addLast(new ChatHandler());
 
                         }
                     })

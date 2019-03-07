@@ -7,6 +7,8 @@ import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
+import java.time.LocalDateTime;
+
 /**
  * <p>
  * Description:处理消息的Handler
@@ -22,9 +24,11 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {
+
         String msgReceived = msg.text();
-        System.out.println("receive msg :" + msgReceived);
-        ctx.writeAndFlush()
+        // 接收到消息 并发送给所有的客户端
+        clients.writeAndFlush(" i am server ，now time is " + LocalDateTime.now().toString());
+
     }
 
     @Override
@@ -41,5 +45,11 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
         System.out.println("removed channel long id :" + ctx.channel().id().asLongText());
         System.out.println("removed channel short id :" + ctx.channel().id().asShortText());
 
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        ctx.channel().close();
+        clients.remove(ctx.channel());
     }
 }
