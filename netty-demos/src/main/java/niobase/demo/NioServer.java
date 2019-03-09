@@ -1,6 +1,5 @@
 package niobase.demo;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
@@ -20,7 +19,7 @@ import java.util.Set;
  **/
 public class NioServer {
     @SuppressWarnings("unused")
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         // Selector: multiplexor of SelectableChannel objects
         Selector selector = Selector.open(); // selector is open here
@@ -40,11 +39,9 @@ public class NioServer {
 
         // Infinite loop..
         // Keep server running
-        while (true) {
-
+        // Selects a set of keys whose corresponding channels are ready for I/O operations
+        while (selector.select() > 0) {
             log("i'm a server and i'm waiting for new connection and buffer select...");
-            // Selects a set of keys whose corresponding channels are ready for I/O operations
-            selector.select();
 
             // token representing the registration of a SelectableChannel with a Selector
             Set<SelectionKey> crunchifyKeys = selector.selectedKeys();
@@ -66,7 +63,6 @@ public class NioServer {
 
                     // Tests whether this key's channel is ready for reading
                 } else if (myKey.isReadable()) {
-
                     SocketChannel crunchifyClient = (SocketChannel) myKey.channel();
                     ByteBuffer crunchifyBuffer = ByteBuffer.allocate(256);
                     int readedByte = crunchifyClient.read(crunchifyBuffer);
@@ -74,16 +70,26 @@ public class NioServer {
 
                     log("Message received: " + result);
 
-                    if(readedByte == -1){
+                    if (readedByte == -1) {
                         crunchifyClient.write(ByteBuffer.wrap("hello this is wyf server!".getBytes()));
                         crunchifyClient.close();
                     }
 
+                    Util.slowWrite(crunchifyClient, "hello this is wyf server!");
                     if (result.equals("Crunchify")) {
                         crunchifyClient.close();
                         log("\nIt's time to close connection as we got last company name 'Crunchify'");
                         log("\nServer will keep running. Try running client again to establish new connection");
                     }
+                }
+                else if (myKey.isWritable()) {
+                    SocketChannel socketChannel = (SocketChannel) myKey.channel();
+                    String message = (String) myKey.attachment();
+                    if (message == null) {
+                        continue;
+                    }
+                    myKey.attach(null);
+                    socketChannel.write(ByteBuffer.wrap("iam data from 服务器端关心的写事件".getBytes()));
                 }
                 crunchifyIterator.remove();
             }
