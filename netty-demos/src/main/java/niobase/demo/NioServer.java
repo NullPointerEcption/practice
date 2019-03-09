@@ -64,6 +64,7 @@ public class NioServer {
                     // Tests whether this key's channel is ready for reading
                 } else if (myKey.isReadable()) {
                     SocketChannel crunchifyClient = (SocketChannel) myKey.channel();
+                    System.out.println("准备读取数据，客户端地址为：" + crunchifyClient.getRemoteAddress() + "---" + crunchifyClient);
                     ByteBuffer crunchifyBuffer = ByteBuffer.allocate(256);
                     int readedByte = crunchifyClient.read(crunchifyBuffer);
                     String result = new String(crunchifyBuffer.array()).trim();
@@ -75,21 +76,12 @@ public class NioServer {
                         crunchifyClient.close();
                     }
 
-                    Util.slowWrite(crunchifyClient, "hello this is wyf server!");
-                    if (result.equals("Crunchify")) {
-                        crunchifyClient.close();
-                        log("\nIt's time to close connection as we got last company name 'Crunchify'");
-                        log("\nServer will keep running. Try running client again to establish new connection");
-                    }
-                }
-                else if (myKey.isWritable()) {
+                    //Util.slowWrite(crunchifyClient, "hello this is wyf server!");
+                    crunchifyClient.register(selector, SelectionKey.OP_WRITE);
+                } else if (myKey.isWritable()) {
+                    System.out.println("触发了写事件");
                     SocketChannel socketChannel = (SocketChannel) myKey.channel();
-                    String message = (String) myKey.attachment();
-                    if (message == null) {
-                        continue;
-                    }
-                    myKey.attach(null);
-                    socketChannel.write(ByteBuffer.wrap("iam data from 服务器端关心的写事件".getBytes()));
+                    Util.slowWrite(socketChannel, "iam data from 服务器端关心的写事件");
                 }
                 crunchifyIterator.remove();
             }

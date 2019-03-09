@@ -43,18 +43,20 @@ public class NioClient {
                     }
                     slowWrite(channel, "client connect success .." + LocalDateTime.now());
                     System.out.println("client acceptAble");
+                    channel.register(selector, SelectionKey.OP_READ);
+                    channel.register(selector, SelectionKey.OP_WRITE);
                 }
                 if (key.isReadable()) {
                     SocketChannel channel = (SocketChannel) key.channel();
                     ByteBuffer buffer = ByteBuffer.allocate(1024);
                     channel.read(buffer);
                     System.out.println("client readAble and read msg : " + new String(buffer.array()));
-                    slowWrite(channel, "client received data ...");
+                    //slowWrite(channel, "client received data ...");
                 }
-                if (key.isWritable()) {
-                    SocketChannel channel = (SocketChannel) key.channel();
-                    slowWrite(channel, "hello i am client ,now time is :" + LocalDateTime.now());
-                }
+                //if (key.isWritable()) {
+                //    SocketChannel channel = (SocketChannel) key.channel();
+                //    slowWrite(channel, "hello i am client ,now time is :" + LocalDateTime.now());
+                //}
                 iteratorKey.remove();
             }
         }
