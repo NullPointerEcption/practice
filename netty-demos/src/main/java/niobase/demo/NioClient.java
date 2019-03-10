@@ -5,11 +5,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
-import java.time.LocalDateTime;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Set;
-
-import static niobase.demo.Util.slowWrite;
 
 /**
  * <p>
@@ -27,6 +25,7 @@ public class NioClient {
         SocketChannel socketChannel = SocketChannel.open();
         socketChannel.configureBlocking(false);
         socketChannel.connect(new InetSocketAddress("localhost", 1111));
+        System.out.println("准备与服务器端建立连接");
 
         int selectableKeys = socketChannel.validOps();
         socketChannel.register(selector, selectableKeys);
@@ -41,22 +40,22 @@ public class NioClient {
                     if (channel.isConnectionPending()) {
                         channel.finishConnect();
                     }
-                    slowWrite(channel, "client connect success .." + LocalDateTime.now());
                     System.out.println("client acceptAble");
-                    channel.register(selector, SelectionKey.OP_READ);
+                    channel.write(ByteBuffer.wrap("client connect success .".getBytes()));
                     channel.register(selector, SelectionKey.OP_WRITE);
                 }
                 if (key.isReadable()) {
                     SocketChannel channel = (SocketChannel) key.channel();
                     ByteBuffer buffer = ByteBuffer.allocate(1024);
                     channel.read(buffer);
-                    System.out.println("client readAble and read msg : " + new String(buffer.array()));
-                    //slowWrite(channel, "client received data ...");
+                    System.out.println("receive msg : " + new String(buffer.array(), Charset.forName("UTF-8")));
                 }
-                //if (key.isWritable()) {
-                //    SocketChannel channel = (SocketChannel) key.channel();
-                //    slowWrite(channel, "hello i am client ,now time is :" + LocalDateTime.now());
-                //}
+                if (key.isWritable()) {
+                    System.out.println("client write data ...");
+                    SocketChannel channel = (SocketChannel) key.channel();
+                    //slowWrite(channel, "hello i am client ,now time is :" + LocalDateTime.now());
+                    channel.register(selector, SelectionKey.OP_READ);
+                }
                 iteratorKey.remove();
             }
         }

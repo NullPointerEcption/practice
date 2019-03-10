@@ -6,6 +6,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.time.LocalTime;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -36,12 +37,12 @@ public class NioServer {
 
         int ops = crunchifySocket.validOps();
         SelectionKey selectKy = crunchifySocket.register(selector, ops, null);
-
+        log("服务器端绑定端口完毕。。。监听客户端");
         // Infinite loop..
         // Keep server running
         // Selects a set of keys whose corresponding channels are ready for I/O operations
         while (selector.select() > 0) {
-            log("i'm a server and i'm waiting for new connection and buffer select...");
+            //log("i'm a server and i'm waiting for new connection and buffer select...");
 
             // token representing the registration of a SelectableChannel with a Selector
             Set<SelectionKey> crunchifyKeys = selector.selectedKeys();
@@ -61,27 +62,33 @@ public class NioServer {
                     crunchifyClient.register(selector, SelectionKey.OP_READ);
                     log("Connection Accepted: " + crunchifyClient.getLocalAddress() + "\n");
 
+                    Util.slowWrite(crunchifyClient, "服务器端成功建立连接");
+
                     // Tests whether this key's channel is ready for reading
-                } else if (myKey.isReadable()) {
+                }
+                if (myKey.isReadable()) {
                     SocketChannel crunchifyClient = (SocketChannel) myKey.channel();
-                    System.out.println("准备读取数据，客户端地址为：" + crunchifyClient.getRemoteAddress() + "---" + crunchifyClient);
-                    ByteBuffer crunchifyBuffer = ByteBuffer.allocate(256);
-                    int readedByte = crunchifyClient.read(crunchifyBuffer);
-                    String result = new String(crunchifyBuffer.array()).trim();
-
-                    log("Message received: " + result);
-
-                    if (readedByte == -1) {
-                        crunchifyClient.write(ByteBuffer.wrap("hello this is wyf server!".getBytes()));
-                        crunchifyClient.close();
-                    }
+                    //System.out.println("准备读取数据，客户端地址为：" + crunchifyClient.getRemoteAddress() + "---" + crunchifyClient);
+                    //ByteBuffer crunchifyBuffer = ByteBuffer.allocate(256);
+                    //int readedByte = crunchifyClient.read(crunchifyBuffer);
+                    //String result = new String(crunchifyBuffer.array()).trim();
+                    //
+                    //log("Message received: " + result);
+                    //
+                    //if (readedByte == -1) {
+                    //    crunchifyClient.write(ByteBuffer.wrap("hello this is wyf server!".getBytes()));
+                    //    crunchifyClient.close();
+                    //}
 
                     //Util.slowWrite(crunchifyClient, "hello this is wyf server!");
                     crunchifyClient.register(selector, SelectionKey.OP_WRITE);
-                } else if (myKey.isWritable()) {
-                    System.out.println("触发了写事件");
+                }
+                if (myKey.isWritable()) {
+                    System.out.println("server write data ...");
                     SocketChannel socketChannel = (SocketChannel) myKey.channel();
-                    Util.slowWrite(socketChannel, "iam data from 服务器端关心的写事件");
+                    Thread.sleep(5000);
+                    socketChannel.write(ByteBuffer.wrap(("data from server _" + LocalTime.now()).getBytes("UTF-8")));
+                    //Util.slowWrite(socketChannel, "iam data from 服务器端关心的写事件");
                 }
                 crunchifyIterator.remove();
             }
