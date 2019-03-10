@@ -13,7 +13,7 @@ import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
-import util.NettyDemoConstant;
+import old.util.NettyDemoConstant;
 
 /**
  * <p>

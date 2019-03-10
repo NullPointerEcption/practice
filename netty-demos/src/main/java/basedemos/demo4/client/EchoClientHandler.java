@@ -3,7 +3,7 @@ package basedemos.demo4.client;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
-import util.NettyDemoConstant;
+import old.util.NettyDemoConstant;
 
 /**
  * <p>

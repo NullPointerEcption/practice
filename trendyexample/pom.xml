@@ -29,10 +29,10 @@
             <classifier>jdk15</classifier>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <!-- https://mvnrepository.com/artifact/com.google.old.guava/old.guava -->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>com.google.old.guava</groupId>
+            <artifactId>old.guava</artifactId>
             <version>27.0.1-jre</version>
         </dependency>
 

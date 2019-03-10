@@ -14,19 +14,19 @@ public class UseFileLocks
     RandomAccessFile raf = new RandomAccessFile( "usefilelocks.txt", "rw" );
     FileChannel fc = raf.getChannel();
 
-    // Get lock
-    System.out.println( "trying to get lock" );
+    // Get old.lock
+    System.out.println( "trying to get old.lock" );
     FileLock lock = fc.lock( start, end, false );
-    System.out.println( "got lock!" );
+    System.out.println( "got old.lock!" );
 
     // Pause
     System.out.println( "pausing" );
     try { Thread.sleep( 3000 ); } catch( InterruptedException ie ) {}
 
-    // Release lock
-    System.out.println( "going to release lock" );
+    // Release old.lock
+    System.out.println( "going to release old.lock" );
     lock.release();
-    System.out.println( "released lock" );
+    System.out.println( "released old.lock" );
 
     raf.close();
   }

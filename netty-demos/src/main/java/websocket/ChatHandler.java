@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
  **/
 public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
-    private ChannelGroup clients = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+    public static ChannelGroup clients = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {

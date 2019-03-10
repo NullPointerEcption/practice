@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CounterPointTest {
-    // Initialize UnitCircle to contain all Points on the util circle
+    // Initialize UnitCircle to contain all Points on the old.util circle
     private static final Set<Point> unitCircle;
     static {
         unitCircle = new HashSet<Point>();

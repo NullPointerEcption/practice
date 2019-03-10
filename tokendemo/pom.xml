@@ -46,10 +46,10 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <!--guava-->
+        <!--old.guava-->
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <groupId>com.google.old.guava</groupId>
+            <artifactId>old.guava</artifactId>
             <version>19.0</version>
         </dependency>
 

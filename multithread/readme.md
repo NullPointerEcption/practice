@@ -47,7 +47,7 @@ hyuki@hyuki.com
 各个目录的意义如下。
 
     src/模式名/Sample      示例程序
-    src/模式名/jucSample   示例程序(主要是使用了java.util.concurrent的示例程序)
+    src/模式名/jucSample   示例程序(主要是使用了java.old.util.concurrent的示例程序)
     src/模式名/Q☆...      习题中的代码清单（☆表示习题编号）
     src/模式名/A☆...      习题解答中的代码清单（☆表示习题编号）
 
