@@ -11,6 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpServerCodec;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 
 /**
@@ -30,6 +31,7 @@ public class ChatServer {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             ChannelFuture channelFuture = serverBootstrap.group(mainGroup, subGroup)
                     .channel(NioServerSocketChannel.class)
+                    .handler(new LoggingHandler())
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
@@ -45,7 +47,7 @@ public class ChatServer {
                                     .addLast(new WebSocketServerProtocolHandler("/ws"))
                                     //自定义的handler 处理客户端消息
                                     .addLast(new ChatHandler())
-                                    .addLast(new HeartBeatHanndler());
+                                    .addLast(new HeartBeatHandler());
 
                         }
                     })

@@ -24,11 +24,10 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {
-
         String msgReceived = msg.text();
+        System.out.println(msgReceived);
         // 接收到消息 并发送给所有的客户端
-        clients.writeAndFlush(" i am server ，now time is " + LocalDateTime.now().toString());
-
+        clients.writeAndFlush(new TextWebSocketFrame(" i am server ，now time is " + LocalDateTime.now().toString()));
     }
 
     @Override
@@ -39,7 +38,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        //当该方法被调用时会自动移除
+        //当该方法被调用时会自动移除 可以不需要再移除
         //clients.remove(ctx.channel));
         System.out.println("removed a channel,now size is : " + clients.size());
         System.out.println("removed channel long id :" + ctx.channel().id().asLongText());

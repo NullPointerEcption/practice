@@ -1,13 +1,11 @@
 package old.other;
 
-import org.junit.Test;
 
 /**
  * 静态内部类和内部类
  */
 public class App4 {
 
-    @Test
     public void test() throws Exception {
 
         Outer.Inner inner = new Outer.Inner();//可以的 因为属于类
