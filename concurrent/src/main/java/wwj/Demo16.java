@@ -3,7 +3,7 @@ package wwj;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description: ${description}
+ * @description: 使用标记变量控制线程结束
  * @author: WangYuFei
  * @create: 2019-03-18 20:11
  **/
