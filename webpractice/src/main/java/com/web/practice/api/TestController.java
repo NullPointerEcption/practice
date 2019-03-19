@@ -21,8 +21,8 @@ public class TestController {
     //}
 
     @GetMapping
-    public void testZhongkuahao(String msg) {
-        System.out.println("msg");
+    public String hello(String msg) {
+        return "hello~~~";
     }
 
 
