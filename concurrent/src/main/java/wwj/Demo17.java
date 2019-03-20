@@ -10,10 +10,12 @@ public class Demo17 {
     public static void main(String[] args) {
         ThreadService threadService = new ThreadService();
         threadService.execute(() -> {
-            while (true) {
+            int i = 0;
+            while (i++ < 1000) {
                 System.out.println("hello");
             }
         });
+        System.out.println("i am main");
 
         threadService.shutdown(3000);
     }
