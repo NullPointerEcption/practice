@@ -36,10 +36,13 @@ public class Demo29 {
         final MyLock myLock = new MyBooleanLock();
         Stream.of("T1", "T2", "T3", "T4").forEach(name -> new Thread(() -> {
             try {
-                myLock.lock();
+                myLock.lock(10L);
                 System.out.println(" i am method --- " + Thread.currentThread().getName());
                 TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (TimeOutException e) {
+                System.out.println(Thread.currentThread().getName() + " time out ");
             } finally {
                 myLock.unlock();
             }

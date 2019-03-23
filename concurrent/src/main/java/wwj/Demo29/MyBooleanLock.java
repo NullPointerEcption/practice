@@ -33,8 +33,29 @@ public class MyBooleanLock implements MyLock {
     }
 
     @Override
-    public void lock(long timewait) throws InterruptedException, TimeOutException {
+    public synchronized void lock(long timewait) throws InterruptedException, TimeOutException {
+        if (timewait <= 0) {
+            lock();
+        }
 
+        //还需要等待多长时间
+        long waitLeft = timewait;
+        //获取所的极限时间 不能超过这个时间
+        long endTime = System.currentTimeMillis() + timewait;
+        while (isLocked) {
+            if (waitLeft <= 0) {
+                throw new TimeOutException("获取锁超时。。。");
+            }
+
+            System.out.println("thread " + Thread.currentThread().getName() + " wait for lock.");
+            threads.add(Thread.currentThread());
+            this.wait(waitLeft);
+            waitLeft = endTime - System.currentTimeMillis();
+        }
+
+        System.out.println("thread " + Thread.currentThread().getName() + " acquire lock.");
+        isLocked = true;
+        acquireLockThread = Thread.currentThread();
     }
 
     @Override
