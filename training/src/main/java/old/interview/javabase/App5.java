@@ -9,6 +9,7 @@ public class App5 {
     private static App5 instance = new App5();
     public static int count1 ;
     public static int count2 = 0;
+    public int count3 = -1;
     static {
         count1++;
         count2++;
@@ -17,6 +18,7 @@ public class App5 {
     private App5() {
         count1++;
         count2++;
+        count3++;
     }
 
     public static App5 getInstance() {
@@ -27,10 +29,10 @@ public class App5 {
 class TestApp5 {
 
     public static  void main(String[] args) {
-
-        App5.getInstance();
+        App5 instance = App5.getInstance();
         System.out.println(App5.count1);
         System.out.println(App5.count2);
+        System.out.println(instance.count3);
     }
 
 }

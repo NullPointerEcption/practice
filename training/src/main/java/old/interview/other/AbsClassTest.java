@@ -14,6 +14,10 @@ public abstract class AbsClassTest {
 
     public static void main(String[] args) {
         AbsClassTest test=new AbsClassTest() {
+            @Override
+            public void fun() {
+                super.fun();
+            }
         };
         AbsClassTest test1 =new AbsClassTest() {
             @Override
